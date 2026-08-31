@@ -1,0 +1,39 @@
+name: Report a run
+description: A result that looks wrong, a sample it missed, or a machine it could not read
+labels: [report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Attach `report.redacted.txt` and `report.redacted.json` — from `--redact`, or from `malmathic redact <case>\report.json` on an existing case. Read the `.txt` before attaching it: the pseudonyms are consistent, the judgement is yours. Never attach anything from `sample\`.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The first line of the report, e.g. `malmathic 0.1.0 · recovery environment (WinRE/WinPE)`
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where it ran
+      options:
+        - Live, elevated
+        - WinRE
+        - --image
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: The file you know to be the sample, the artifact you know it left, or the volume it should have read
+    validations:
+      required: true
+  - type: textarea
+    id: got
+    attributes:
+      label: What the report says
+      description: The relevant candidate block or coverage lines, or the whole redacted report as an attachment
+    validations:
+      required: true

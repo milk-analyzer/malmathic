@@ -1,0 +1,8 @@
+* text=auto eol=lf
+crates/**/fixtures/** binary
+crates/**/testdata/** binary
+crates/mm-sign/roots/** binary
+*.der binary
+*.evtx binary
+*.lnk binary
+*.lzxstream binary

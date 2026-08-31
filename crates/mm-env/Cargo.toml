@@ -1,0 +1,17 @@
+[package]
+name = "mm-env"
+publish = false
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+mm-core = { workspace = true }
+chrono = { workspace = true }
+mm-raw = { workspace = true }
+ntfs-core = { workspace = true }
+log = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+windows = { workspace = true }

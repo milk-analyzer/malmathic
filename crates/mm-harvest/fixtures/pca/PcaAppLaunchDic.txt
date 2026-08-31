@@ -1,0 +1,24 @@
+C:\Program Files\WindowsApps\Microsoft.MicrosoftOfficeHub_18.2409.1301.0_x64__8wekyb3d8bbwe\WebViewHost.exe|2026-01-05 09:14:02.115
+D:\installers\VendorVPN_v4.2.2_x64.exe|2026-01-05 09:31:44.602
+C:\Users\analyst\Downloads\vendor-browser-windows-x86_64-14.5.5.exe|2026-01-05 09:47:18.106
+C:\Users\analyst\AppData\Local\VendorSoft\VendorBrowser\Release\vendorbrowser.exe|2026-01-05 10:02:55.940
+C:\Program Files\VendorGraphics\CNext\CNext\VendorRSServ.exe|2026-01-06 11:18:10.869
+C:\Program Files\VendorGraphics\CNext\CNext\VendorSoftware.exe|2026-01-06 11:22:23.696
+C:\Users\analyst\Downloads\vendor-web_139.0.7258.127-1.1_installer_x64.exe|2026-01-06 12:39:59.864
+C:\Users\analyst\Downloads\DiskBench2_0_6\DiskBench64.exe|2026-01-06 13:08:25.280
+C:\Users\analyst\Downloads\DiskReport9_7_1\DiskReport64.exe|2026-01-06 13:13:55.178
+C:\Program Files\DiskReport\unins000.exe|2026-01-06 13:16:55.745
+C:\Users\analyst\Downloads\DiskMark9_0_1\DiskMark64.exe|2026-01-06 13:18:38.448
+C:\Program Files (x86)\Common Files\GameStore\gamestoreservice.exe|2026-01-07 09:18:41.666
+C:\Program Files (x86)\GameStore\storeapps\common\vendor_toy\bin\ui32.exe|2026-01-07 09:38:32.535
+C:\Users\analyst\AppData\Local\Programs\Vendor Editor\Editor.exe|2026-01-08 15:38:49.882
+C:\Users\analyst\AppData\Roaming\Vendor Messenger\Messenger.exe|2026-01-08 17:21:17.003
+C:\Users\analyst\Downloads\memcheck-4.3.7-usb.img\imageUSB.exe|2026-01-09 11:26:55.797
+C:\Users\analyst\AppData\Local\VendorWeb\Applicationrowser.exe|2026-01-12 16:31:53.308
+C:\Program Files\VendorArchiver\ArchiverFM.exe|2026-01-14 20:28:35.988
+C:\Program Files\Vendor VPN\Vendor VPN.exe|2026-01-15 07:59:09.702
+C:\Program Files\Vendor\VPN\VendorVPN.Launcher.exe|2026-02-21 15:10:55.433
+C:\Program Files\WindowsApps\Microsoft.WindowsNotepad_11.2506.35.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe|2026-02-24 14:05:08.598
+C:\Program Files\WindowsApps\Microsoft.ScreenSketch_11.2506.25.0_x64__8wekyb3d8bbwe\SnippingTool\SnippingTool.exe|2026-02-24 11:49:28.679
+C:\Program Files\VendorTunnel\VendorTunnel.exe|2026-03-03 13:32:06.339
+C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2025.11070.8001.0_x64__8wekyb3d8bbwe\Photos.exe|2026-03-04 11:44:37.673

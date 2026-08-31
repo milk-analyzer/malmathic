@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    name: rust
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+          targets: aarch64-pc-windows-msvc
+      - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --all --check
+      - name: Build
+        run: cargo build --workspace --all-targets
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: Test
+        run: cargo test --workspace
+      - name: Release binary, x86-64
+        run: cargo build --release -p malmathic
+      - name: Release binary, ARM64
+        run: cargo build --release -p malmathic --target aarch64-pc-windows-msvc
+
+  msrv:
+    name: rust 1.94 (declared minimum)
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.94.0
+      - uses: Swatinem/rust-cache@v2
+      - name: Check
+        run: cargo check --workspace --all-targets
+      - name: Check bindings
+        working-directory: bindings/python
+        run: cargo check --all-targets
+
+  python:
+    name: python bindings
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: bindings/python
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Format
+        working-directory: bindings/python
+        run: cargo fmt --check
+      - name: Clippy
+        working-directory: bindings/python
+        run: cargo clippy --all-targets -- -D warnings
+      - name: Build wheel
+        working-directory: bindings/python
+        run: |
+          python -m pip install --upgrade pip maturin pefile
+          maturin build --release
+      - name: Test
+        working-directory: bindings/python
+        shell: bash
+        run: |
+          python -m pip install --force-reinstall --no-deps target/wheels/*.whl
+          python -m unittest discover -s tests -v

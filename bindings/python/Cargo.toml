@@ -1,0 +1,27 @@
+[workspace]
+
+[package]
+name = "pymalmathic"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.94"
+description = "Python bindings for the malmathic forensic core: Windows artifact parsers, raw NTFS image reading, PE analysis"
+repository = "https://github.com/milk-analyzer/malmathic"
+license = "MIT"
+publish = false
+
+[lib]
+name = "pymalmathic"
+crate-type = ["cdylib"]
+
+[dependencies]
+mm-core = { path = "../../crates/mm-core" }
+mm-env = { path = "../../crates/mm-env" }
+mm-raw = { path = "../../crates/mm-raw" }
+mm-harvest = { path = "../../crates/mm-harvest" }
+serde = "1"
+serde_json = "1"
+
+[dependencies.pyo3]
+version = "0.29"
+features = ["abi3-py39", "extension-module"]

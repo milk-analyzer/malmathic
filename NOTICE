@@ -1,0 +1,33 @@
+Third-party notices for malmathic
+=================================
+
+malmathic itself is MIT; see LICENSE.
+
+Derived source
+--------------
+
+`crates/mm-harvest/src/imphash_ordinals.rs` — the Winsock and OLE automation
+ordinal-to-name tables are transcribed from pefile, so that this project's
+`imphash` matches the value every other tool reports for the same file.
+
+    pefile — Copyright (c) 2004-2023 Ero Carrera
+    MIT licence, https://github.com/erocarrera/pefile
+
+`crates/mm-raw/src/ghost.rs` and the `$LogFile` operation names follow the
+code-to-operation mapping published by jschicht's LogFileParser; the numeric
+codes are the shared invariant, not the labels.
+
+Linked dependencies
+-------------------
+
+Everything that links into `malmathic.exe` is MIT, Apache-2.0, BSD, Zlib,
+Unlicense or CC0 — permissive, and compatible with the terms in LICENSE. The
+full set is pinned in Cargo.lock and listed in
+`crates/malmathic/tests/audited-dependencies.txt`.
+
+One test-only dependency is not. `nt_hive2` (and the `marvin32` and
+`memoverlay` crates it brings) is GPL-3.0. It is a `[dev-dependencies]` entry
+of `mm-harvest`, kept as an independent second registry-hive implementation to
+differential-test this project's own readers against; no part of it reaches the
+shipped binary. A test binary built from this tree does link it, so a test
+binary is not yours to redistribute under the terms in LICENSE.

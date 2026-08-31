@@ -1,0 +1,25 @@
+[package]
+name = "malmathic"
+publish = false
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Finds the malware sample on an infected Windows machine, and recovers it when it is gone"
+
+[dependencies]
+mm-core = { workspace = true }
+mm-env = { workspace = true }
+mm-raw = { workspace = true }
+mm-harvest = { workspace = true }
+mm-sign = { workspace = true }
+mm-score = { workspace = true }
+mm-report = { workspace = true }
+clap = { workspace = true }
+chrono = { workspace = true }
+
+[dev-dependencies]
+mm-harvest = { workspace = true, features = ["test-support"] }
+ntfs-core = { workspace = true }
+serde_json = { workspace = true }
